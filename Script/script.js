@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeHamburgerMenu();
     initializeForm();
     initializeScroll();
+    initializeGalleryModal();
 });
 
 /* ========================
@@ -269,6 +270,125 @@ document.addEventListener('keydown', function(e) {
             hamburger.classList.remove('active');
             navMenu.classList.remove('active');
         }
+        
+        // Cerrar modal si está abierto
+        closeImageModal();
     }
 });
+
+/* ========================
+   MODAL DE GALERÍA
+   ======================== */
+
+let currentImageIndex = 0;
+let galleryImages = [];
+
+function initializeGalleryModal() {
+    // Obtener todas las imágenes de la galería
+    const galleryItems = document.querySelectorAll('.gallery-clickable');
+    
+    galleryItems.forEach((item, index) => {
+        // Obtener la URL de la imagen del atributo data-image
+        const imageSrc = item.getAttribute('data-image');
+        if (imageSrc) {
+            galleryImages.push(imageSrc);
+        }
+        
+        // Agregar evento de click
+        item.addEventListener('click', function() {
+            currentImageIndex = index;
+            openImageModal(imageSrc);
+        });
+    });
+
+    // Eventos del modal
+    const modal = document.getElementById('imageModal');
+    const closeBtn = document.querySelector('.modal-close');
+    const prevBtn = document.querySelector('.modal-prev');
+    const nextBtn = document.querySelector('.modal-next');
+    const backdrop = document.querySelector('.modal-backdrop');
+
+    closeBtn.addEventListener('click', closeImageModal);
+    backdrop.addEventListener('click', closeImageModal);
+    prevBtn.addEventListener('click', showPreviousImage);
+    nextBtn.addEventListener('click', showNextImage);
+
+    // Navegación con teclado en el modal
+    document.addEventListener('keydown', function(e) {
+        if (modal.classList.contains('active')) {
+            if (e.key === 'ArrowLeft') {
+                showPreviousImage();
+            } else if (e.key === 'ArrowRight') {
+                showNextImage();
+            }
+        }
+    });
+}
+
+function openImageModal(imageSrc) {
+    const modal = document.getElementById('imageModal');
+    const modalImage = document.getElementById('modalImage');
+    
+    // Remover clases de animación anteriores
+    modalImage.classList.remove('fade-out', 'fade-in');
+    
+    // Agregar animación de entrada
+    modalImage.classList.add('fade-in');
+    modalImage.src = imageSrc;
+    modal.classList.add('active');
+    modal.classList.remove('closing');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeImageModal() {
+    const modal = document.getElementById('imageModal');
+    const modalImage = document.getElementById('modalImage');
+    
+    // Agregar clase de cierre para animación
+    modal.classList.add('closing');
+    
+    // Esperar a que termine la animación antes de remover la clase active
+    setTimeout(() => {
+        modal.classList.remove('active');
+        modal.classList.remove('closing');
+        modalImage.classList.remove('fade-in', 'fade-out');
+        document.body.style.overflow = 'auto';
+    }, 300);
+}
+
+function showPreviousImage() {
+    if (galleryImages.length > 0) {
+        const modalImage = document.getElementById('modalImage');
+        
+        // Agregar animación de salida
+        modalImage.classList.remove('fade-in');
+        modalImage.classList.add('fade-out');
+        
+        // Esperar a que termine la animación para cambiar la imagen
+        setTimeout(() => {
+            currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+            modalImage.classList.remove('fade-out');
+            modalImage.classList.add('fade-in');
+            modalImage.src = galleryImages[currentImageIndex];
+        }, 300);
+    }
+}
+
+function showNextImage() {
+    if (galleryImages.length > 0) {
+        const modalImage = document.getElementById('modalImage');
+        
+        // Agregar animación de salida
+        modalImage.classList.remove('fade-in');
+        modalImage.classList.add('fade-out');
+        
+        // Esperar a que termine la animación para cambiar la imagen
+        setTimeout(() => {
+            currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+            modalImage.classList.remove('fade-out');
+            modalImage.classList.add('fade-in');
+            modalImage.src = galleryImages[currentImageIndex];
+        }, 300);
+    }
+}
 

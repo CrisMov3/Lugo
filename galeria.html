@@ -35,44 +35,44 @@
     <section class="gallery-section">
         <div class="container">
             <div class="gallery-grid">
-                <div class="gallery-item">
+                <div class="gallery-item gallery-clickable" data-image="img/Galeria/Retrato minimalista.jpg">
                     <div class="gallery-placeholder">
-                        <span class="placeholder-text">Obra 1</span>
+                        <img src="img/Galeria/Retrato minimalista.jpg" alt="Retrato Minimalista" loading="lazy">
                     </div>
                     <h3>Retrato Minimalista</h3>
                     <p>Técnica: Tinta y digital</p>
                 </div>
-                <div class="gallery-item">
+                <div class="gallery-item gallery-clickable" data-image="img/Galeria/Ilustración Conceptual.png">
                     <div class="gallery-placeholder">
-                        <span class="placeholder-text">Obra 2</span>
+                        <img src="img/Galeria/Ilustración Conceptual.png" alt="Ilustración Conceptual" loading="lazy">
                     </div>
                     <h3>Ilustración Conceptual</h3>
                     <p>Técnica: Digital</p>
                 </div>
-                <div class="gallery-item">
+                <div class="gallery-item gallery-clickable" data-image="img/Galeria/Diseño de Personaje.jpg">
                     <div class="gallery-placeholder">
-                        <span class="placeholder-text">Obra 3</span>
+                        <img src="img/Galeria/Diseño de Personaje.jpg" alt="Diseño de Personaje" loading="lazy">
                     </div>
                     <h3>Diseño de Personaje</h3>
                     <p>Técnica: Lápiz y digital</p>
                 </div>
-                <div class="gallery-item">
+                <div class="gallery-item gallery-clickable" data-image="img/Galeria/Ilustración de Paisaje.jpg">
                     <div class="gallery-placeholder">
-                        <span class="placeholder-text">Obra 4</span>
+                        <img src="img/Galeria/Ilustración de Paisaje.jpg" alt="Ilustración de Paisaje" loading="lazy">
                     </div>
                     <h3>Ilustración de Paisaje</h3>
                     <p>Técnica: Acuarela y digital</p>
                 </div>
-                <div class="gallery-item">
+                <div class="gallery-item gallery-clickable" data-image="img/Galeria/Arte Abstracto.jpg">
                     <div class="gallery-placeholder">
-                        <span class="placeholder-text">Obra 5</span>
+                        <img src="img/Galeria/Arte Abstracto.jpg" alt="Arte Abstracto" loading="lazy">
                     </div>
                     <h3>Arte Abstracto</h3>
                     <p>Técnica: Digital</p>
                 </div>
-                <div class="gallery-item">
+                <div class="gallery-item gallery-clickable" data-image="img/Galeria/Identidad Visual.jpg">
                     <div class="gallery-placeholder">
-                        <span class="placeholder-text">Obra 6</span>
+                        <img src="img/Galeria/Identidad Visual.jpg" alt="Identidad Visual" loading="lazy">
                     </div>
                     <h3>Identidad Visual</h3>
                     <p>Técnica: Diseño gráfico</p>
@@ -88,6 +88,17 @@
             <a href="comisiones.html" class="cta-button-secondary">Solicitar Comisión</a>
         </div>
     </section>
+
+    <!-- Modal de Galería -->
+    <div id="imageModal" class="image-modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <button class="modal-prev">&#10094;</button>
+            <img id="modalImage" src="" alt="Imagen ampliada" class="modal-image">
+            <button class="modal-next">&#10095;</button>
+        </div>
+        <div class="modal-backdrop"></div>
+    </div>
 
     <footer class="footer">
         <div class="container">

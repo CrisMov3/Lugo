@@ -429,6 +429,18 @@ body {
     color: var(--white);
     font-size: 1.2rem;
     font-weight: 600;
+    overflow: hidden;
+}
+
+.gallery-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.gallery-item:hover .gallery-placeholder img {
+    transform: scale(1.05);
 }
 
 /* ========================
@@ -741,6 +753,17 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.portfolio-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.portfolio-item:hover .portfolio-image img {
+    transform: scale(1.08);
 }
 
 .portfolio-placeholder {
@@ -1103,8 +1126,228 @@ body {
 }
 
 /* ========================
-   RESPONSIVE
+   GALERÍA CLICKABLE
    ======================== */
+
+.gallery-clickable {
+    cursor: pointer;
+}
+
+/* ========================
+   MODAL DE IMAGEN
+   ======================== */
+
+.image-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5000;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-modal.active {
+    display: flex;
+    animation: backdropOpen 0.4s ease;
+}
+
+.image-modal.closing {
+    animation: modalFadeOut 0.3s ease forwards;
+}
+
+@keyframes backdropOpen {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.modal-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    z-index: -1;
+    transition: background-color 0.3s ease;
+}
+
+.image-modal.closing .modal-backdrop {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.modal-content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    max-width: 1000px;
+    height: auto;
+    z-index: 5001;
+}
+
+.modal-image {
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 4px;
+    animation: imageZoomIn 0.4s ease;
+}
+
+.modal-image.fade-out {
+    animation: imageFadeOut 0.3s ease forwards;
+}
+
+.modal-image.fade-in {
+    animation: imageFadeIn 0.4s ease forwards;
+}
+
+.modal-close {
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5002;
+}
+
+.modal-close:hover {
+    background-color: var(--white);
+    transform: scale(1.1);
+}
+
+.modal-prev,
+.modal-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(212, 165, 116, 0.8);
+    color: var(--white);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5002;
+}
+
+.modal-prev:hover,
+.modal-next:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.modal-prev {
+    left: -70px;
+}
+
+.modal-next {
+    right: -70px;
+}
+
+@keyframes imageZoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes imageFadeOut {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(1.05);
+    }
+}
+
+@keyframes imageFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes modalFadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes backdropFadeOut {
+    from {
+        background-color: rgba(0, 0, 0, 0.95);
+    }
+    to {
+        background-color: rgba(0, 0, 0, 0);
+    }
+}
+
+/* Modal responsivo */
+@media (max-width: 768px) {
+    .modal-close {
+        top: 10px;
+        right: 10px;
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+    }
+
+    .modal-prev,
+    .modal-next {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    .modal-prev {
+        left: 10px;
+    }
+
+    .modal-next {
+        right: 10px;
+    }
+
+    .modal-image {
+        max-height: 70vh;
+    }
+}
 
 @media (max-width: 1024px) {
     .nav-menu {

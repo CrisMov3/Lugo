@@ -62,23 +62,23 @@
             <h2>Trabajos Destacados</h2>
             <p class="section-subtitle">Conoce algunos de nuestros proyectos más recientes</p>
             <div class="portfolio-grid">
-                <div class="portfolio-item">
+                <div class="portfolio-item gallery-clickable" data-image="img/Digital.jpg">
                     <div class="portfolio-image">
-                        <div class="portfolio-placeholder">Obra Destacada 1</div>
+                        <img src="img/Digital.jpg" alt="Retrato Digital" loading="lazy">
                     </div>
                     <h3>Retrato Digital</h3>
                     <p class="portfolio-tech">Técnica: Digital | Cliente: Artista Local</p>
                 </div>
-                <div class="portfolio-item">
+                <div class="portfolio-item gallery-clickable" data-image="img/Digital2.jpg">
                     <div class="portfolio-image">
-                        <div class="portfolio-placeholder">Obra Destacada 2</div>
+                        <img src="img/Digital2.jpg" alt="Ilustración de Personaje" loading="lazy">
                     </div>
                     <h3>Ilustración de Personaje</h3>
                     <p class="portfolio-tech">Técnica: Mixta | Cliente: Marca Independiente</p>
                 </div>
-                <div class="portfolio-item">
+                <div class="portfolio-item gallery-clickable" data-image="img/Tecnica mixta.jpg">
                     <div class="portfolio-image">
-                        <div class="portfolio-placeholder">Obra Destacada 3</div>
+                        <img src="img/Tecnica mixta.jpg" alt="Diseño de Concepto" loading="lazy">
                     </div>
                     <h3>Diseño de Concepto</h3>
                     <p class="portfolio-tech">Técnica: Digital | Cliente: Estudio Creativo</p>
@@ -177,6 +177,17 @@
             <a href="comisiones.html" class="cta-button-secondary">Ver Detalles</a>
         </div>
     </section>
+
+    <!-- Modal de Galería -->
+    <div id="imageModal" class="image-modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <button class="modal-prev">&#10094;</button>
+            <img id="modalImage" src="" alt="Imagen ampliada" class="modal-image">
+            <button class="modal-next">&#10095;</button>
+        </div>
+        <div class="modal-backdrop"></div>
+    </div>
 
     <footer class="footer">
         <div class="container">
