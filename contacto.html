@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Lugo</title>
+    <link rel="stylesheet" href="Style/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Lugo</div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Inicio</a></li>
+                <li><a href="nosotros.html" class="nav-link">Nosotros</a></li>
+                <li><a href="galeria.html" class="nav-link">Galería</a></li>
+                <li><a href="comisiones.html" class="nav-link">Comisiones</a></li>
+                <li><a href="contacto.html" class="nav-link active">Contacto</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Contacto</h1>
+            <p>Estamos listos para escuchar tu idea</p>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Ponte en Contacto</h2>
+                    <p>Completa el formulario y nos pondremos en contacto contigo lo antes posible para discutir tu proyecto.</p>
+                    
+                    <div class="info-block">
+                        <h3>Email</h3>
+                        <p><a href="mailto:info@lugo.art">info@lugo.art</a></p>
+                    </div>
+
+                    <div class="info-block">
+                        <h3>Tiempo de Respuesta</h3>
+                        <p>Respondemos en un plazo de 24-48 horas laborales.</p>
+                    </div>
+
+                    <div class="info-block">
+                        <h3>Información Importante</h3>
+                        <p>Cuanta más información proporciones sobre tu proyecto, mejor podremos ayudarte. Incluye:</p>
+                        <ul>
+                            <li>Descripción detallada de tu idea</li>
+                            <li>Estilo artístico que prefieres</li>
+                            <li>Tamaño y formato deseado</li>
+                            <li>Timeline aproximado</li>
+                            <li>Presupuesto estimado</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nombre *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Teléfono</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Asunto *</label>
+                            <input type="text" id="subject" name="subject" placeholder="Ej: Solicitud de Comisión" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="project-type">Tipo de Proyecto *</label>
+                            <select id="project-type" name="project-type" required>
+                                <option value="">-- Selecciona una opción --</option>
+                                <option value="retrato">Retrato</option>
+                                <option value="personaje">Diseño de Personaje</option>
+                                <option value="paisaje">Paisaje/Ilustración</option>
+                                <option value="logo">Logo/Identidad Visual</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="budget">Presupuesto Aproximado</label>
+                            <select id="budget" name="budget">
+                                <option value="">-- Selecciona un rango --</option>
+                                <option value="50-150">$50 - $150 (Básico)</option>
+                                <option value="150-300">$150 - $300 (Estándar)</option>
+                                <option value="300+">$300+ (Premium)</option>
+                                <option value="sin-idea">No tengo idea</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Cuéntanos tu idea *</label>
+                            <textarea id="message" name="message" rows="6" placeholder="Describe tu proyecto, ideas, referencias, estilos que te gusten..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-submit">Enviar Solicitud</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Lugo. Todos los derechos reservados.</p>
+            <p>Creado con pasión por el arte.</p>
+        </div>
+    </footer>
+
+    <script src="Script/script.js"></script>
+</body>
+</html>
