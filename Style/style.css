@@ -3,21 +3,23 @@
    ======================== */
 
 :root {
-    --primary-color: #1a1a1a;
-    --secondary-color: #f5f5f5;
-    --accent-color: #d4a574;
-    --accent-light: #e8d5c4;
-    --text-dark: #2a2a2a;
-    --text-light: #7a7a7a;
-    --border-color: #e0e0e0;
+    --primary-color: #6B4423;
+    --secondary-color: #F5F1ED;
+    --accent-color: #E6B84D;
+    --accent-light: #F0D9A8;
+    --mountain-color: #4A6B7C;
+    --accent-red: #8B3A3A;
+    --text-dark: #3D2817;
+    --text-light: #8B7355;
+    --border-color: #E8DFD5;
     --white: #ffffff;
     
     --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     --font-accent: 'Georgia', 'Times New Roman', serif;
     
     --transition: all 0.3s ease;
-    --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.08);
-    --shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.12);
+    --shadow-light: 0 2px 8px rgba(107, 68, 35, 0.08);
+    --shadow-medium: 0 4px 16px rgba(107, 68, 35, 0.12);
 }
 
 * {
@@ -76,6 +78,23 @@ body {
     color: var(--primary-color);
     letter-spacing: 2px;
     text-decoration: none;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo-image {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.logo-image:hover {
+    transform: scale(1.05);
 }
 
 .nav-menu {
@@ -148,7 +167,7 @@ body {
    ======================== */
 
 .hero {
-    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 25%, #d4a574 50%, #2a2a2a 75%, #1a1a1a 100%);
+    background: linear-gradient(135deg, #6B4423 0%, #8B7355 25%, #E6B84D 50%, #4A6B7C 75%, #6B4423 100%);
     background-size: 400% 400%;
     padding: 100px 20px;
     text-align: center;
@@ -448,7 +467,7 @@ body {
    ======================== */
 
 .cta-section {
-    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 25%, #d4a574 50%, #2a2a2a 75%, #1a1a1a 100%);
+    background: linear-gradient(135deg, #6B4423 0%, #8B7355 25%, #E6B84D 50%, #4A6B7C 75%, #6B4423 100%);
     background-size: 400% 400%;
     color: var(--white);
     padding: 80px 20px;
@@ -494,7 +513,7 @@ body {
    ======================== */
 
 .page-header {
-    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 25%, #d4a574 50%, #2a2a2a 75%, #1a1a1a 100%);
+    background: linear-gradient(135deg, #6B4423 0%, #8B7355 25%, #E6B84D 50%, #4A6B7C 75%, #6B4423 100%);
     background-size: 400% 400%;
     padding: 100px 20px;
     text-align: center;
@@ -923,7 +942,7 @@ body {
    ======================== */
 
 .stats-section {
-    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 25%, #d4a574 50%, #2a2a2a 75%, #1a1a1a 100%);
+    background: linear-gradient(135deg, #6B4423 0%, #8B7355 25%, #E6B84D 50%, #4A6B7C 75%, #6B4423 100%);
     background-size: 400% 400%;
     color: var(--white);
     margin: 60px 0;
